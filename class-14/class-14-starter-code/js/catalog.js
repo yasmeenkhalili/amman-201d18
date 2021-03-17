@@ -27,7 +27,7 @@ function populateForm() {
 function handleSubmit(event) {
 
   // TODO: Prevent the page from reloading
-
+  event.preventDefault();
   // Do all the things ...
   addSelectedItemToCart();
   cart.saveToLocalStorage();
@@ -38,10 +38,13 @@ function handleSubmit(event) {
 
 // TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
+  const selectedItem= new CartItem (product, quantity);
+    cart.push(selectedItem);
+  }
+  
   // TODO: suss out the item picked from the select list
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
-}
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {}
